@@ -1,29 +1,29 @@
-//import { isAuthenticated } from 'src/core/auth';
+import { isAuthenticated } from 'src/core/auth';
 import App from './app';
 import SignIn from './pages/sign-in';
-//import Home from './pages/home';
+import Home from './pages/home';
 
 
 export const paths = {
   ROOT: '/',
-  SIGN_IN: '/sign-in'//,
-  //HOME: '/home'
+  SIGN_IN: '/sign-in',
+  HOME: '/'
 };
 
 
 const requireAuth = getState => {
   return (nextState, replace) => {
-    //if (!isAuthenticated(getState())) {
+    if (!isAuthenticated(getState())) {
       replace(paths.SIGN_IN);
-    //}
+    }
   };
 };
 
 const requireUnauth = getState => {
   return (nextState, replace) => {
-    //if (isAuthenticated(getState())) {
+    if (isAuthenticated(getState())) {
       replace(paths.HOME);
-    //}
+    }
   };
 };
 
@@ -33,12 +33,12 @@ export const getRoutes = getState => {
     path: paths.ROOT,
     component: App,
     childRoutes: [
-      //{
-      //  indexRoute: {
-      //    component: Home,
-      //    onEnter: requireAuth(getState)
-      //  }
-      //},
+      {
+        indexRoute: {
+          component: Home,
+          onEnter: requireAuth(getState)
+        }
+      },
       {
         path: paths.SIGN_IN,
         component: SignIn,

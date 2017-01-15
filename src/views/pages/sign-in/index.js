@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-//import { authActions } from 'src/core/auth';
+import LoginForm from '../../components/login-form';
+import { authActions } from 'src/core/auth';
 
 
 export function SignIn({signInWithGithub, signInWithGoogle, signInWithTwitter}) {
@@ -8,9 +9,13 @@ export function SignIn({signInWithGithub, signInWithGoogle, signInWithTwitter}) 
     <div className="g-row sign-in">
       <div className="g-col">
         <h1 className="sign-in__heading">Sign in</h1>
-        <button className="btn sign-in__button" onClick={signInWithGithub} type="button">GitHub</button>
-        <button className="btn sign-in__button" onClick={signInWithGoogle} type="button">Google</button>
-        <button className="btn sign-in__button" onClick={signInWithTwitter} type="button">Twitter</button>
+        <LoginForm/>
+        
+        <ul className="sign-in__actions">
+            <li><a onClick={signInWithGithub} className="link link-github"></a></li>
+            <li><a onClick={signInWithGoogle} className="link link-google"></a></li>
+            <li><a onClick={signInWithTwitter} className="link link-twitter"></a></li>
+          </ul>
       </div>
     </div>
   );
@@ -27,4 +32,4 @@ SignIn.propTypes = {
 //  CONNECT
 //-------------------------------------
 
-export default connect(/*null, authActions*/)(SignIn);
+export default connect(null, authActions)(SignIn);

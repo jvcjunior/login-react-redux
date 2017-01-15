@@ -1,15 +1,20 @@
-//@import
-//"settings";
+@import
+"settings";
 
-//@import
-//"~minx/src/settings",
-//"~minx/src/functions",
-//"~minx/src/mixins",
-//"~minx/src/reset",
-//"~minx/src/elements";
+@import
+"~minx/src/settings",
+"~minx/src/functions",
+"~minx/src/mixins",
+"~minx/src/reset",
+"~minx/src/elements";
 
 @import 
-"sign-in";
+"commom",
+"grid",
+"button",
+"header",
+"sign-in",
+"login-form";
 
 $base-background-color: #222 !default;
 

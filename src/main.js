@@ -4,6 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
+import { initAuth } from './core/auth';
 import configureStore from './core/store';
 import Root from './views/root';
 import './styles/core.scss';
@@ -28,4 +29,7 @@ function render() {
 // ========================================================
 // Go!
 // ========================================================
-render();
+
+initAuth(store.dispatch)
+  .then(() => render(Root))
+  .catch(error => console.error(error)); // eslint-disable-line no-console

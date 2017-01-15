@@ -1,10 +1,10 @@
 import { applyMiddleware, compose, createStore } from 'redux';
-//import thunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 import reducers from './reducers';
 
 
 export default (initialState = {}) => {
- //let middleware = applyMiddleware(thunk);
+ let middleware = applyMiddleware(thunk);
 
  // if (process.env.NODE_ENV !== 'production') {
  //   const devToolsExtension = window.devToolsExtension;
@@ -13,7 +13,7 @@ export default (initialState = {}) => {
  //   }
  // }
 
-  const store = createStore(reducers, initialState/*, middleware*/);
+  const store = createStore(reducers, initialState, middleware);
 
  // if (module.hot) {
  //   module.hot.accept('./reducers', () => {

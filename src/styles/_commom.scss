@@ -1,0 +1,24 @@
+.link {
+    font-size: 24px;
+    font-family: 'FontAwesome';
+    line-height: 24px;
+    
+    &-github:before {
+        content: "\f09b";
+    }
+    &-github:hover {
+        color: white;
+    }
+    &-twitter:before {
+        content: "\f099";
+    }
+    &-twitter:hover {
+        color: #00ACEE;
+    }
+    &-google:before {
+         content: "\f1a0";
+    }
+    &-google:hover {
+        color: #E04006;
+    }
+}
