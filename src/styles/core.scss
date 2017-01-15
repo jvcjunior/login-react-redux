@@ -1,0 +1,33 @@
+//@import
+//"settings";
+
+//@import
+//"~minx/src/settings",
+//"~minx/src/functions",
+//"~minx/src/mixins",
+//"~minx/src/reset",
+//"~minx/src/elements";
+
+@import 
+"sign-in";
+
+$base-background-color: #222 !default;
+
+html {
+  overflow-y: scroll;
+  background-color: $base-background-color;
+}
+
+body {
+  padding-bottom: 120px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hide {
+  display: none !important;
+}
+
