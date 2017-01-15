@@ -1,0 +1,5 @@
+.firebaserc{
+  "projects": {
+    "default": "login-react-redux"
+  }
+}
