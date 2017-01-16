@@ -25,7 +25,7 @@ export class App extends Component {
       router.replace(paths.SIGN_IN);
     }
     else if (!auth.authenticated && nextProps.auth.authenticated) {
-      router.replace(paths.TASKS);
+      router.replace(paths.HOME);
     }
   }
 
