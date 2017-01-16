@@ -15,7 +15,9 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --display-chunks --progress",
     "server:dev": "cross-env NODE_ENV=development webpack-dev-server --hot --inline --progress",
-    "start": "npm run server:dev"
+    "start": "npm run server:dev",
+    "test": "cross-env NODE_ENV=test karma start --single-run",
+    "test:watch": "cross-env NODE_ENV=test karma start"
   },
   "author": "Valter Jr",
   "license": "ISC",

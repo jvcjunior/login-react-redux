@@ -32,31 +32,31 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.onSubmit}>
-        <input
-          autoFocus
-          className="login-form__input"
-          maxLength="25"
-          onChange={this.handleChange.bind(this, 'email')}
-          placeholder="Email"
-          type="email"
-          value={this.state.user.email}
-          required
-        />
-
-        <input
-          autoComplete="off"
-          className="login-form__input"
-          maxLength="8"
-          onChange={this.handleChange.bind(this, 'password')}
-          placeholder="Password"
-          type="password"
-          value={this.state.user.password}
-          required
-        />
-
-        <button className="btn sign-in__button submit" type="submit">Log in</button>
-      </form>
+      <div id="login">
+        <form className="login-form" onSubmit={this.onSubmit}>
+          <span className="fa fa-user"></span>
+          <input
+            autoFocus
+            maxLength="25"
+            onChange={this.handleChange.bind(this, 'email')}
+            placeholder="Email"
+            type="email"
+            value={this.state.user.email}
+            required
+          />
+          <span className="fa fa-lock"></span>
+          <input
+            autoComplete="off"
+            maxLength="8"
+            onChange={this.handleChange.bind(this, 'password')}
+            placeholder="Password"
+            type="password"
+            value={this.state.user.password}
+            required
+          />
+          <input type="submit" value="Log in"/>
+        </form>
+      </div>
     );
   }
 }

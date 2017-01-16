@@ -5,19 +5,23 @@ import { authActions } from 'src/core/auth';
 
 
 export function SignIn({signInWithLoginAndPassword, signInWithGithub, signInWithGoogle, signInWithTwitter, signInWithFacebook}) {
+  
   return (
-    <div className="g-row sign-in">
-      <div className="g-col">
-        <h1 className="sign-in__heading">Sign in</h1>
+    <div className="container">
         <LoginForm signInWithLoginAndPassword={signInWithLoginAndPassword}/>
         
-        <ul className="sign-in__actions">
-            <li><a onClick={signInWithGithub} className="link link-github"></a></li>
-            <li><a onClick={signInWithGoogle} className="link link-google"></a></li>
-            <li><a onClick={signInWithTwitter} className="link link-twitter"></a></li>
-            <li><a onClick={signInWithFacebook} className="link link-facebook"></a></li>
+        <div className="sign-up__actions clearfix">
+          <p>Not a member? <a href="/sign-up">Sign up now</a><span className="fa fa-arrow-right"></span></p>
+        </div> 
+
+        <div className="sign-in__actions clearfix">
+          <ul>
+              <li><a onClick={signInWithGithub} className="link link-github"></a></li>
+              <li><a onClick={signInWithGoogle} className="link link-google"></a></li>
+              <li><a onClick={signInWithTwitter} className="link link-twitter"></a></li>
+              <li><a onClick={signInWithFacebook} className="link link-facebook"></a></li>
           </ul>
-      </div>
+        </div>
     </div>
   );
 }

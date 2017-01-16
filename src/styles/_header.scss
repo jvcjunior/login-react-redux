@@ -28,7 +28,6 @@
 
 
 .header__actions {
-  @include clearfix;
   float: right;
   padding: 8px 0;
   line-height: 24px;
@@ -73,6 +72,10 @@
       content: "\f09b";
       font-family: 'FontAwesome';
       line-height: 24px;
+    }
+    
+    &:hover {
+        color: #E2EEF9;
     }
   }
 }

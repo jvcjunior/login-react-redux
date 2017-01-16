@@ -2,6 +2,7 @@ import firebase from 'firebase';
 import { firebaseAuth } from 'src/core/firebase';
 import {
   INIT_AUTH,
+  START_LOGIN,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
   SIGN_OUT_SUCCESS
@@ -18,6 +19,9 @@ function authenticateWithProvider(provider) {
 
 function authenticateWithEmailAndPassword(email, password) {
   return dispatch => {
+    
+    dispatch({type: START_LOGIN});
+    
     firebaseAuth.signInWithEmailAndPassword(email, password)
       .then(result => dispatch(signInSuccess(result)))
       .catch(error => dispatch(signInError(error)));
@@ -43,6 +47,10 @@ export function signInSuccess(result) {
     type: SIGN_IN_SUCCESS,
     payload: result.user
   };
+}
+
+export function signUp(email, password) {
+  return authenticateWithEmailAndPassword(email, password);
 }
 
 export function signInWithLoginAndPassword(email, password) {
