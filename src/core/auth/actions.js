@@ -8,9 +8,17 @@ import {
 } from './action-types';
 
 
-function authenticate(provider) {
+function authenticateWithProvider(provider) {
   return dispatch => {
     firebaseAuth.signInWithPopup(provider)
+      .then(result => dispatch(signInSuccess(result)))
+      .catch(error => dispatch(signInError(error)));
+  };
+}
+
+function authenticateWithEmailAndPassword(email, password) {
+  return dispatch => {
+    firebaseAuth.signInWithEmailAndPassword(email, password)
       .then(result => dispatch(signInSuccess(result)))
       .catch(error => dispatch(signInError(error)));
   };
@@ -37,18 +45,27 @@ export function signInSuccess(result) {
   };
 }
 
+export function signInWithLoginAndPassword(email, password) {
+  return authenticateWithEmailAndPassword(email, password);
+}
+
 export function signInWithGithub() {
-  return authenticate(new firebase.auth.GithubAuthProvider());
+  return authenticateWithProvider(new firebase.auth.GithubAuthProvider());
 }
 
 
 export function signInWithGoogle() {
-  return authenticate(new firebase.auth.GoogleAuthProvider());
+  return authenticateWithProvider(new firebase.auth.GoogleAuthProvider());
 }
 
 
 export function signInWithTwitter() {
-  return authenticate(new firebase.auth.TwitterAuthProvider());
+  return authenticateWithProvider(new firebase.auth.TwitterAuthProvider());
+}
+
+
+export function signInWithFacebook() {
+  return authenticateWithProvider(new firebase.auth.FacebookAuthProvider());
 }
 
 export function signOut() {

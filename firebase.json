@@ -1,3 +1,6 @@
+//=========================================================
+//  https://firebase.google.com/docs/hosting/full-config
+//---------------------------------------------------------
 {
   "database": {
     "rules": "firebase.rules.json"

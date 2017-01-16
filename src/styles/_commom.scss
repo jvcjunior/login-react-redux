@@ -21,4 +21,10 @@
     &-google:hover {
         color: #E04006;
     }
+    &-facebook:before {
+         content: "\f082";
+    }
+    &-facebook:hover {
+        color: #4267B2;
+    }
 }

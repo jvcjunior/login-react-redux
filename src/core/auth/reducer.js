@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import { INIT_AUTH, SIGN_IN_SUCCESS, SIGN_OUT_SUCCESS } from './action-types';
+import { INIT_AUTH, SIGN_IN_SUCCESS, SIGN_IN_ERROR, SIGN_OUT_SUCCESS } from './action-types';
 
 
 export const AuthState = new Record({
