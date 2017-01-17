@@ -4,7 +4,7 @@ import { createSelector } from 'reselect';
 import { authActions, getAuth } from 'src/core/auth';
 import { paths } from '../routes';
 import Header from '../components/header';
-
+import classNames from 'classnames';
 
 export class App extends Component {
   static contextTypes = {
@@ -32,6 +32,8 @@ export class App extends Component {
   render() {
     return (
       <div>
+       
+        <div className={classNames({'loading-app': this.props.auth.loading})}></div>
         <Header
           authenticated={this.props.auth.authenticated}
           signOut={this.props.signOut}

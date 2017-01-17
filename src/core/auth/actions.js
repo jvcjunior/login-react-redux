@@ -5,6 +5,7 @@ import {
   START_LOGIN,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
+  SIGN_IN_EMAIL_PASSWORD_SUCCESS,
   SIGN_OUT_SUCCESS
 } from './action-types';
 
@@ -23,7 +24,7 @@ function authenticateWithEmailAndPassword(email, password) {
     dispatch({type: START_LOGIN});
     
     firebaseAuth.signInWithEmailAndPassword(email, password)
-      .then(result => dispatch(signInSuccess(result)))
+      .then(result => dispatch(signInEmailPasswordSuccess(result)))
       .catch(error => dispatch(signInError(error)));
   };
 }
@@ -48,6 +49,14 @@ export function signInSuccess(result) {
     payload: result.user
   };
 }
+
+export function signInEmailPasswordSuccess(result) {
+  return {
+    type: SIGN_IN_EMAIL_PASSWORD_SUCCESS,
+    payload: result
+  };
+}
+
 
 export function signUp(email, password) {
   return authenticateWithEmailAndPassword(email, password);

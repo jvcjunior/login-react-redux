@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,9 +47,11 @@ table {
 
 @import 
 "commom",
+"alerts",
 "header",
 "login-form",
-"sign-in";
+"sign-in",
+"loading";
 
 
 * {
@@ -107,10 +104,14 @@ p {
 }
 
 .container {
-  left: 50%;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  // left: 50%;
+  // position: fixed;
+  // top: 50%;
+  // transform: translate(-50%, -50%);
+	margin: 0 auto;
+  width: 100%;
+	max-width: 300px;
+	margin-top: 200px;
 }
 
 .g-row {
@@ -118,5 +119,4 @@ p {
     width: 100%;
     max-width: 1000px;
 }
-
 
