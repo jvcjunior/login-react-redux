@@ -1,5 +1,12 @@
 # Login app with React, Redux, and Firebase
-A simple Login app example — built with React, Redux, and Firebase.
+Firebase Login is a simple, easy-to-use authentication service built on top of Firebase Login, allowing you to authenticate users without any server-side code.
+
+Firebase Login offers several types of authentication: email/password, and third-party integration with Facebook, GitHub, Google, and Twitter. 
+It allows you to authenticate your users without having to manually store authentication credentials or run a server.
+
+This app was built with React, Redux, and Firebase.
+
+# Demo
 
 Try the demo at https://login-react-redux.firebaseapp.com. 
 

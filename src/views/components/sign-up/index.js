@@ -28,7 +28,8 @@ class SignUpForm extends Component {
     const login = this.state.newUser.email.trim();
     const password = this.state.newUser.password.trim();
     const passwordConfirmation = this.state.newUser.passwordConfirmation.trim();
-    if (login.length && password.length && password === passwordConfirmation) this.props.signUp(login, password);
+    if (password.length && password === passwordConfirmation) 
+      this.props.signUp(login, password);
   }
 
   render() {

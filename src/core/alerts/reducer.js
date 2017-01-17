@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import { SIGN_IN_ERROR } from 'src/core/auth';
+import { SIGN_IN_ERROR, SIGN_UP_ERROR } from 'src/core/auth';
 import { DISMISS_ALERT } from './action-types';
 
 
@@ -18,6 +18,12 @@ export function alertReducer(state = new AlertState(), action) {
         display: true,
         message: action.payload.message
       });
+    case SIGN_UP_ERROR:
+      return state.merge({
+        actionLabel: 'Undo',
+        display: true,
+        message: action.payload.message
+      });  
 
     case DISMISS_ALERT:
       return new AlertState();
